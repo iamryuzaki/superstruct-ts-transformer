@@ -1,7 +1,7 @@
 import ts from "typescript";
 import path from "path";
 import fs from "fs";
-import { createValidatorTransformer } from "../transformer";
+import createValidatorTransformer from "../transformer";
 
 compile({
   rootNames: [path.resolve(__dirname, "debug-source.ts")],

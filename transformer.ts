@@ -311,7 +311,9 @@ const createVisitor = (
   return visitor;
 };
 
-export const createValidatorTransformer = (program: ts.Program) => (
+const createValidatorTransformer = (program: ts.Program) => (
   ctx: ts.TransformationContext
 ): ts.Transformer<ts.SourceFile> => (sf: ts.SourceFile) =>
   ts.visitNode(sf, createVisitor(ctx, sf, program.getTypeChecker()));
+
+export default createValidatorTransformer
